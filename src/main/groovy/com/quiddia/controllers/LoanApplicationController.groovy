@@ -1,6 +1,7 @@
 package com.quiddia.controllers
 
 import com.quiddia.model.Client
+import com.quiddia.model.Loan
 import com.quiddia.services.LoanApplicationService
 import com.wordnik.swagger.annotations.Api
 import com.wordnik.swagger.annotations.ApiOperation
@@ -31,8 +32,8 @@ class LoanApplicationController {
         loanApplicationService.sendClientDetails(
                 new Client(firstName: client.name, lastName: client.surName, age: client.age, loanId: 1))
 
-//        loanApplicationService.applyForLoan(
-//                new Loan(amount: client.amount))
+        loanApplicationService.applyForLoan(
+                new Loan(amount: client.amount))
 
     }
 

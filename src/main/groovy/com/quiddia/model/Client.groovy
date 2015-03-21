@@ -7,6 +7,7 @@ public class Client {
     private String name;
     private String surname;
     private Integer age;
+    private Integer amount;
     private ClientPositionEnum position;
 
 }
