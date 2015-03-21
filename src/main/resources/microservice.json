@@ -8,9 +8,6 @@
             "loan-application-service-lodz": {
                 "path": "com/ofg/loan-application-service-lodz"
             },
-            "reporting-service-lodz": {
-                "path": "com/ofg/reporting-service-lodz"
-            },
             "loan-application-decision-maker-lodz": {
                 "path": "com/ofg/loan-application-decision-maker-lodz"
             },
