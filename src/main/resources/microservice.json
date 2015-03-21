@@ -2,8 +2,11 @@
     "lodz": {
         "this": "com/ofg/ui-lodz",
         "dependencies": {
-            "loan-application-service": {
+            "client-service-lodz": {
                 "path": "com/ofg/client-service-lodz"
+            },
+            "reporting-service-lodz": {
+                "path": "com/ofg/reporting-service-lodz"
             }
         }
     }

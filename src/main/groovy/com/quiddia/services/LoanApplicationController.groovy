@@ -37,43 +37,43 @@ class LoanApplicationService {
 
     }
 
-    private doCallLoanApplicationService(Loan loan) {
-        serviceRestClient
-                .forService(Collaborators.CLIENT_SERVICE)
-                .retryUsing(executor.withMaxRetries(3))
-                .post()
-                .withCircuitBreaker(HystrixCommand.Setter.withGroupKey({ 'sendingLoanDetails' }),
-                { log.info("Breaking circuit") })
-                .onUrl("/api/loanApplication")
-                .body(new JsonBuilder(loan).toString())
-                .withHeaders().contentTypeJson()
-                .andExecuteFor()
-                .ignoringResponse()
-    }
-//
-//    void sendClientDetails(Client client) {
-//
-//        try {
-//            doCallClientService(client)
-//
-//        } catch (ServiceUnavailableException e) {
-//            log.info("Cannot connect to collabolator", e)
-//        }
-//
-//
-//    }
-//
-//    private doCallClientService(Client client) {
-//        serviceRestClient.forService(Collaborators.CLIENT_SERVICE_DEPENDENCY_NAME)
+//    private doCallLoanApplicationService(Loan loan) {
+//        serviceRestClient
+//                .forService(Collaborators.CLIENT_SERVICE)
 //                .retryUsing(executor.withMaxRetries(3))
 //                .post()
 //                .withCircuitBreaker(HystrixCommand.Setter.withGroupKey({ 'sendingClientDetails' }),
 //                { log.info("Breaking circuit") })
-//                .onUrl("/api/client")
-//                .body(new JsonBuilder(client).toString())
+//                .onUrl("/api/loanApplication")
+//                .body(new JsonBuilder(loan).toString())
 //                .withHeaders().contentTypeJson()
 //                .andExecuteFor()
 //                .ignoringResponse()
 //    }
+//
+    void sendClientDetails(Client client) {
+
+        try {
+            doCallClientService(client)
+
+        } catch (ServiceUnavailableException e) {
+            log.info("Cannot connect to collabolator", e)
+        }
+
+
+    }
+
+    private doCallClientService(Client client) {
+        serviceRestClient.forService(Collaborators.CLIENT_SERVICE)
+                .retryUsing(executor.withMaxRetries(3))
+                .post()
+                .withCircuitBreaker(HystrixCommand.Setter.withGroupKey({ 'sendingClientDetails' }),
+                { log.info("Breaking circuit") })
+                .onUrl("/api/client")
+                .body(new JsonBuilder(client).toString())
+                .withHeaders().contentTypeJson()
+                .andExecuteFor()
+                .ignoringResponse()
+    }
 
 }
