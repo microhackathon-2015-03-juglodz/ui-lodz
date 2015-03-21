@@ -5,8 +5,17 @@
             "client-service-lodz": {
                 "path": "com/ofg/client-service-lodz"
             },
+            "loan-application-service-lodz": {
+                "path": "com/ofg/loan-application-service-lodz"
+            },
             "reporting-service-lodz": {
                 "path": "com/ofg/reporting-service-lodz"
+            },
+            "loan-application-decision-maker-lodz": {
+                "path": "com/ofg/loan-application-decision-maker-lodz"
+            },
+            "marketing-offer-generator": {
+                "path": "com/ofg/marketing-offer-generator-lodz"
             }
         }
     }
