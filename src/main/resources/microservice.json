@@ -2,8 +2,8 @@
     "lodz": {
         "this": "com/ofg/ui-lodz",
         "dependencies": {
-            "collerator": {
-                "path": "com/ofg/some-other-service"
+            "loan-application-service": {
+                "path": "com/ofg/client-service-lodz"
             }
         }
     }

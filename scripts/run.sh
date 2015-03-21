@@ -4,7 +4,7 @@
 # Environment where our app is deployed, configuration will be taken from corresponding dir
 export APP_ENV="prod"
 # Git repository with configuration. Absolute path should be used.
-export CONFIG_FOLDER="properties"
+export CONFIG_FOLDER="/home/warden/workspace-jee/ms/properties"
 # For secretProd env, ENCRYPT_KEY is required.
 # Use encrypt.key if you pass it as -D option when running java
 export ENCRYPT_KEY="secretEncryptKey"
@@ -13,5 +13,5 @@ export ENCRYPT_KEY="secretEncryptKey"
 pushd ..
 # For production mode (no stubs) use prod
 # For developer mode (stubs and embedded Zookeeper) use env
-./gradlew $@ bootRun -Dspring.profiles.active=dev
+./gradlew $@ bootRun -Dspring.profiles.active=dev -x test -x generateWiremockClientStub
 popd

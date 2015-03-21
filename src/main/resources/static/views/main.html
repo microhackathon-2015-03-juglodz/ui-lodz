@@ -3,27 +3,46 @@
 </alert>
 
 <div>
-    <h3>Welcome in the bootstrap gui microservice</h3>
+    <h3>Welcome in the Łódź gui microservice</h3>
 
     <p class="lead">
 
-    <h4>Find the city</h4>
+    <h4>Apply for loan</h4>
 
     <form role="form">
         <div class="form-group">
-            <label for="latitude">Latitude</label>
-            <input type="text" class="form-control" id="latitude" placeholder="Latitude" ng-model="coords.lat">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name" ng-model="client.name">
         </div>
         <div class="form-group">
-            <label for="longtitude">Longtitude</label>
-            <input type="text" class="form-control" id="longtitude" placeholder="Longtitude" ng-model="coords.lon">
+            <label for="surname">Surname</label>
+            <input type="text" class="form-control" id="surname" placeholder="Surname" ng-model="client.surname">
         </div>
-        <button type="button" class="btn btn-default" ng-click="findCity()">Find</button>
+        <div class="form-group">
+            <label for="surname">Age</label>
+            <input type="text" class="form-control" id="age" placeholder="Age" ng-model="client.age">
+        </div>
+        <div class="form-group">
+            <label for="job">Job Position</label>
+            <select id="job" class="form-control" ng-model="client.job">
+                <option value="IT">IT</option>
+                <option value="Finance">Financial Sector</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="text" class="form-control" id="amount" placeholder="Amount" ng-model="client.amount">
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="getLoan()">Get Money!</button>
     </form>
 
     <hr/>
 
     <div class="well">
-        The city you are looking for is: {{city}}
+        Your application status is: {{status}}
+        The special offer you were waiting for is: {{offer}}
     </div>
+
+
 </div>

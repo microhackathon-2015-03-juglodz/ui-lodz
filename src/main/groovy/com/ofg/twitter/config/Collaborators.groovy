@@ -5,6 +5,7 @@ import groovy.transform.CompileStatic
 @CompileStatic
 class Collaborators {
 
-    public static final String COLLERATOR_DEPENDENCY_NAME = 'collerator'
+    public static final String CLIENT_SERVICE = 'client-service-lodz'
+    public static final String DECISION_SERVICE = 'decision-service'
 
 }
